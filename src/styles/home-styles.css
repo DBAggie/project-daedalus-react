@@ -1,0 +1,125 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@700&display=swap');
+
+
+/* Keyframes */
+@keyframes tagline {
+    from {padding-top: 60%;}
+    to {padding-top: 10%;}
+}
+
+
+/* ------> Main Section */
+.overlay {
+    grid-row: 1;
+    grid-column: 1;
+    z-index: 2;
+
+}
+
+/* Overlay Container */
+.container-overlay {
+    display: grid;
+    margin-bottom: 6%;
+}
+
+.overlay img {
+    width: 100%;
+}
+
+.overlay-title {
+    z-index: 2;
+    margin-left: 29%;
+    color: #fff;
+    font-family: Silkscreen;
+    animation-name: tagline;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+
+/* Main Body Container */
+section {
+    background-color: 	#f5f5f5;
+}
+
+.mainbody {
+    display: flex;
+    margin: 30px 30px;
+    background-color: 	#f5f5f5;
+}
+
+.main {
+    font-size: 25px;
+    padding: 20px;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.main-1 img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 500px;
+}
+
+.main-2 {
+    flex-wrap: wrap;
+}
+
+/* App & Site Cards */
+.app-sites-container {
+    z-index: -1;
+    margin: 30px 30px;
+}
+
+.card-heading {
+    text-align: center;
+    font-size: larger;
+    font-family: Aboreto;
+    text-shadow: 2px 2px #fff;
+    /* text-decoration: underline; */
+
+}
+
+.current-apps {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 20px 20px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.current-sites {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 20px 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #1D2C40;
+    padding: 1em 1em;
+    border: 1px solid #1D2C40;
+    display: inline-block;
+    max-width: 200px;
+    box-shadow: 10px 15px #000;
+    margin: 10px 10px;
+    color: #fff;
+    line-height: 1em;
+
+}
+
+.card li {
+    list-style-type: none;
+    text-align: center;
+
+}
+
+.card a {
+    text-decoration: none;
+    color: beige
+}

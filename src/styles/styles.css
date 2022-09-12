@@ -1,0 +1,148 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@700&display=swap");
+
+/* ------> Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ------> Containers General */
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* ------> Header/Nav Section */
+.header {
+  position: fixed;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  color: #fff;
+  z-index: 3;
+}
+
+.header-background {
+  width: 100vw;
+  position: fixed;
+  height: 70px;
+  background-color: maroon;
+  z-index: 1;
+}
+
+.header img {
+  margin-left: 5%;
+}
+
+.mainnav li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.mainnav ul {
+  display: inline;
+  list-style-type: none;
+  display: inline-flex;
+  order: 1;
+  padding-right: 20px;
+  justify-content: center;
+}
+
+.nav-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  padding: 3px;
+}
+
+.nav-link:link {
+  color: #fff;
+}
+
+/* .nav-link:visited {} */
+.nav-link:hover {
+  background-color: #d3d3d3;
+  color: black;
+  border-radius: 10px;
+}
+
+.nav-link:active {
+  color: #d3d3d3;
+  background-color: #000;
+}
+
+/* Background Overlay */
+/* .overlay {
+    grid-row: 1;
+    grid-column: 1;
+    z-index: 2;
+
+} */
+/* 
+.container-overlay {
+    display: grid;
+    margin-bottom: 6%;
+} */
+
+.overlay img {
+  width: 100%;
+}
+
+/* ------> Footer Section*/
+footer {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  min-height: 60px;
+  align-items: center;
+}
+
+.footer-container li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.footer-container li ul {
+  /* display: inline; */
+  list-style-type: none;
+  display: inline-flex;
+  order: 1;
+  justify-content: center;
+}
+
+.footer-icons {
+  display: inline-flex;
+}
+
+.icon-1 {
+  margin: 0px 5px;
+}
+
+.icon-2 {
+  margin: 0px 5px;
+  padding-top: 2px;
+}
+
+.footer-icons a:link {
+  cursor: pointer;
+}
+
+.footer-icons a:hover {
+  cursor: pointer;
+}
