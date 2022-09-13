@@ -1,0 +1,59 @@
+
+/* ------> Header/Nav Section */
+.header {
+  position: fixed;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  color: #fff;
+  z-index: 3;
+}
+
+.header-background {
+  width: 100vw;
+  position: fixed;
+  height: 70px;
+  background-color: maroon;
+  z-index: 1;
+}
+
+.header img {
+  margin-left: 5%;
+}
+
+.mainnav li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.mainnav ul {
+  display: inline;
+  list-style-type: none;
+  display: inline-flex;
+  order: 1;
+  padding-right: 20px;
+  justify-content: center;
+}
+
+.nav-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  padding: 3px;
+}
+
+.nav-link:link {
+  color: #fff;
+}
+
+/* .nav-link:visited {} */
+.nav-link:hover {
+  background-color: #d3d3d3;
+  color: black;
+  border-radius: 10px;
+}
+
+.nav-link:active {
+  color: #d3d3d3;
+  background-color: #000;
+}

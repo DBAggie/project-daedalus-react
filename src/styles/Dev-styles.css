@@ -1,0 +1,46 @@
+
+
+.body,
+.content {
+  order: 2;
+}
+
+.body {
+  background-color: #fff;
+  order: 2;
+  padding: 60px 40px;
+  margin: 30px 150px;
+  box-shadow: 20px 10px rgba(86, 117, 226, 0.715);
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  order: 2;
+  display: block;
+}
+
+h1,
+p,
+li {
+  margin: 20px 0px;
+}
+
+.content p {
+  font-size: 16px;
+  padding: 0px 20px;
+}
+
+.content li {
+  margin-left: 40px;
+}
+
+.content ul {
+  margin: 0px 20px;
+}
+
+.content h1 {
+  font-size: 40px;
+  text-align: center;
+}
+

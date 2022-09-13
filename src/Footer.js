@@ -1,6 +1,7 @@
 import React from 'react';
 import GitHubLogo from './resources/GitHub-Mark/PNG/GitHub-Mark-Light-32px.png';
 import LinkedInLogo from './resources/LinkedIn-Logos/LI-In-Bug-32px.png';
+import './styles/Footer-styles.css';
 
 export const Footer = () => {
     return (

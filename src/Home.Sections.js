@@ -6,10 +6,11 @@ import ReactCardLogo from './resources/current-sites/ruby-1.png';
 import RubyCardLogo from './resources/current-sites/ruby-1.png';
 import AngularCardLogo from './resources/current-sites/angular-1.png';
 import LaravelCardLogo from './resources/current-sites/laravel-1.png';
+import './styles/home-styles.css';
 
 export const Home = () => {
     return (
-        <div>
+        <div className='content'>
             <body className="mainSection">
                 <div className="container-overlay">
                     <div className="overlay">

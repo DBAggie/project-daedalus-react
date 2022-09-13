@@ -1,6 +1,6 @@
-import './styles/home-styles.css';
+import './styles/Header-styles.css';
 import './styles/styles.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import { Header } from './Header.js';
 import { Footer } from './Footer.js';
 import { Home } from './Home.Sections.js';
@@ -10,47 +10,43 @@ import SiteLogo from './resources/ART-Logo-large.png';
 import { AboutMe } from './AboutMe.Sections';
 import { DevInfo } from './Dev.Sections';
 
-const componentObj = {
-  AboutMe: AboutMe,
-  DevInfo: DevInfo,
-  Home: Home
-}
-
-function App(props) {
+function App() {
   const [content, setContent] = useState('Home');
 
-  const handleClick = (prev) => {
-    console.log(content);
-    console.log(prev);
-    setContent(prev);
+  useEffect(() => {
+    setContent('Home');
+  }, []);
+
+  const handleClick = ({ target }) => {
+    setContent(target.value);
   }
+
   return (
-    <div className="wrapper">
-      <div className="header-background">
-        <p>-</p>
-      </div>
+    <div className="wrapper root">
       <header>
-        <div className="container header">
-          <div className="footer-icons">
+        <div className="header-container">
+          <div className="header-icons">
             <a className="icons icon-1" href="https://github.com/DBAggie" target="_blank"><img
               src={GitHubLogo} /></a>
-            <br />
             <a className="icons icon-2" href="https://www.linkedin.com/in/justin-h-7911536b/" target="_blank"><img
               src={LinkedInLogo} /></a>
           </div>
-          <img src={SiteLogo} />
-          <nav className="mainnav header-content">
-            <li>
-              <ul><a className="nav-link active-page" value='Home' onClick={handleClick}>Home</a></ul>
-              <ul><a className="nav-link" value='AboutMe' onClick={handleClick}>About Me</a></ul>
-              <ul><a className="nav-link" value='DevInfo' onClick={handleClick}>Dev Info</a></ul>
-            </li>
-          </nav>
+          <div className="header-logo">
+            <img src={SiteLogo} />
+          </div>
+          <div className="header-nav">
+            <button className="nav-item" value='Home' onClick={handleClick}>Home</button>
+            <button className="nav-item" value='AboutMe' onClick={handleClick}>About Me</button>
+            <button className="nav-item" value='DevInfo' onClick={handleClick}>Dev Info</button>
+          </div>
         </div>
       </header>
-      {content == 'Home' && <Home />}
-      {content == 'DevInfo' && <DevInfo />}
-      {content == 'AboutMe' && <AboutMe />}
+
+
+      {content == 'Home' ? <Home /> : null}
+      {content == 'DevInfo' ? <DevInfo /> : null}
+      {content == 'AboutMe' ? <AboutMe /> : null}
+
       <Footer />
     </div>
   );
