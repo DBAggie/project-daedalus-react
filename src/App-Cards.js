@@ -38,12 +38,14 @@ export const AppCards = () => {
     return (
         <div className="current-apps">
             {cardInfo.cards.map(card => (
-                <div className="card">
+                <div className="card" key={card.title}>
                     <div className="card-background"></div>
                     <div className="card-title">
                         <h3>{card.title}</h3>
+                        <br />
                     </div>
-                    <div className="card-img"><img src={card.image} /></div>
+                    <div className="card-img"><img src={card.image} alt='Default Alt' /></div>
+                    <br />
                     <div className="card-info">
                         <h4>A Dynamic To Do List App</h4>
                         <a href={`./${card.imgTitle}.html`} className='card-a'>Check it out!</a>

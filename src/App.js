@@ -9,6 +9,7 @@ import LinkedInLogo from './resources/LinkedIn-Logos/LI-In-Bug-32px.png';
 import SiteLogo from './resources/ART-Logo-large.png';
 import { AboutMe } from './AboutMe.Sections';
 import { DevInfo } from './Dev.Sections';
+import IconLogo from './resources/favicon.ico?v=2'
 
 function App() {
   const [content, setContent] = useState('Home');
@@ -23,17 +24,13 @@ function App() {
 
   return (
     <div className="wrapper root">
-      <head>
-        <title>{content}</title>
-        <link rel="icon" href="./resources/favicon.ico?v=2" />
-      </head>
       <header>
         <div className="header-container">
           <div className="header-icons">
             <a className="icons icon-1" href="https://github.com/DBAggie" target="_blank"><img
-              src={GitHubLogo} /></a>
+              src={GitHubLogo} alt='Default Alt' /></a>
             <a className="icons icon-2" href="https://www.linkedin.com/in/justin-h-7911536b/" target="_blank"><img
-              src={LinkedInLogo} /></a>
+              src={LinkedInLogo} alt='Default Alt' /></a>
           </div>
           <div className="header-logo">
             <img src={SiteLogo} />

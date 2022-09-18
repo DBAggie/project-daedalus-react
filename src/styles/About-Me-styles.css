@@ -1,0 +1,40 @@
+/* Body Section */
+.about-body-container {
+  display: flex;
+  grid-area: 2 / 1 / 3 / 2;
+  height: 100%;
+  background-image: url(../resources/earth_bottom.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0px;
+  z-index: 1;
+}
+
+.about-content {
+  display: flex;
+  color: black;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* height: 100%; */
+  width: 100%;
+  padding: 20px 80px;
+  opacity: 0.8;
+}
+
+.profile-photo {
+  height: 600px;
+  width: 400px;
+}
+
+.about-content p {
+  font-size: 1.5em;
+  font-weight: 300;
+  text-align: center;
+  text-overflow: wrap;
+  padding: 20px 6.5rem;
+  background-color: #f5f5f5;
+  margin: 0px 90px;
+  border-radius: 8px;
+}

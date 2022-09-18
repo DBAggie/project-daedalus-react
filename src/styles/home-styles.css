@@ -53,7 +53,6 @@
     display: flex;
     background-color: 	#f5f5f5;
     padding: 2rem 2rem;
-    
 }
 
 .main {
@@ -77,15 +76,14 @@
 .app-sites-container {
     z-index: -1;
     /* padding: 30px 30px; */
-    background-color: 	#f5f5f5;
+    margin-bottom: 4rem;
 }
 
 .card-heading {
     text-align: center;
     font-size: larger;
     font-family: Aboreto;
-    text-shadow: 2px 2px #fff;
-    /* text-decoration: underline; */
+    color: #fff;
 
 }
 

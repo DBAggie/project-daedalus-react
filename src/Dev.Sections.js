@@ -3,7 +3,7 @@ import './styles/Dev-styles.css';
 
 export const DevInfo = () => {
     return (
-        <div class="dev-body">
+        <div className="dev-body">
             <section className="dev-content">
                 <div className='divider'>
                     <h1 className='h1-h1'>How did I make this website</h1>

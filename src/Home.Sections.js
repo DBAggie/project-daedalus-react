@@ -11,7 +11,7 @@ export const Home = () => {
             <div className="mainSection">
                 <div className="container-overlay">
                     <div className="overlay">
-                        <img src={BackgroundEarth} />
+                        <img src={BackgroundEarth} alt='Default Alt' />
                     </div>
                     <div className="overlay">
                         <h1 className="overlay-title">Innovation in a connected world..innovating..and stuff</h1>
@@ -27,7 +27,7 @@ export const Home = () => {
                             items I have in the pipeline. I will have my complete source code on Github.
                             <br />
                             <br />
-                            <img src={Meme} />
+                            <img src={Meme} alt='Default Alt' />
                         </p>
 
                     </div>
