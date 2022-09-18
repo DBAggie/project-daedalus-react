@@ -69,7 +69,7 @@ export const SiteCards = () => {
     return (
         <div className="current-sites">
             {cardInfo.cards.map(card => (
-                <div className="card-site-4 card">
+                <div className="card">
                     <div className="card-title">
                         <h3>{card.title}</h3>
                         <br />
@@ -87,10 +87,12 @@ export const SiteCards = () => {
                             ))}
                         </ul>
                         <br />
-                        <a href={`./${card.imgTitle}.html`}>Check it out!</a>
                     </div>
+                    <a href={`./${card.imgTitle}.html`} className='card-a'>Check it out!</a>
                 </div>
+
             ))}
+
         </div>
     );
 

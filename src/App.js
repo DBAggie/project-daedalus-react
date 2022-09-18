@@ -23,6 +23,10 @@ function App() {
 
   return (
     <div className="wrapper root">
+      <head>
+        <title>{content}</title>
+        <link rel="icon" href="./resources/favicon.ico?v=2" />
+      </head>
       <header>
         <div className="header-container">
           <div className="header-icons">

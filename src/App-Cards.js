@@ -46,7 +46,7 @@ export const AppCards = () => {
                     <div className="card-img"><img src={card.image} /></div>
                     <div className="card-info">
                         <h4>A Dynamic To Do List App</h4>
-                        <a href={`./${card.imgTitle}.html`}>Check it out!</a>
+                        <a href={`./${card.imgTitle}.html`} className='card-a'>Check it out!</a>
                     </div>
                 </div>
             ))}
