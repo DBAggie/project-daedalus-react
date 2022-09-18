@@ -1,7 +1,7 @@
 import './styles/Header-styles.css';
 import './styles/styles.css';
 import React, { useState, useEffect } from 'react';
-// import { Header } from './Header.js';
+import { Header } from './Header.js';
 import { Footer } from './Footer.js';
 import { Home } from './Home.Sections.js';
 import GitHubLogo from './resources/GitHub-Mark/PNG/GitHub-Mark-Light-32px.png';
@@ -22,20 +22,18 @@ function App() {
     setContent('Home');
   }, []);
 
-  const handleCardContentChange = (appName) => {
-    setContent(appName);
-    if (appName !== 'Home') {
+  const handleCardContentChange = (name) => {
+    setContent(name);
+    if (name !== 'Home') {
       setCardState(false);
+    } else {
+      setCardState(true);
     }
-  }
-
-  const handleContentChange = (contentName) => {
-    setContent(contentName);
   }
 
   return (
     <div className="wrapper root">
-      <header onChange={handleContentChange} />
+      <Header onChange={handleCardContentChange} />
 
       {content == 'Home' ? <Home /> : null}
       {content == 'DevInfo' ? <DevInfo /> : null}
