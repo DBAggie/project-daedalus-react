@@ -67,16 +67,6 @@ export const Home = () => {
                     </div>
                 </div>
             </div>
-            <section className="app-sites-container">
-                <div className="card-heading">
-                    <h2>Current Applications</h2>
-                </div>
-                <AppCards />
-                <div className="card-heading">
-                    <h2>Current Sites</h2>
-                </div>
-                <SiteCards />
-            </section>
         </div>
     );
 };

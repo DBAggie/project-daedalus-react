@@ -4,9 +4,9 @@ import './styles/About-Me-styles.css';
 
 export const AboutMe = () => {
     return (
-        <div class="about-body-container">
-            <div class="about-content">
-                <img src={ProfilePhoto} class="profile-photo" />
+        <div className="about-body-container">
+            <div className="about-content">
+                <img src={ProfilePhoto} className="profile-photo" />
                 <p>
                     I am a software developer with a passion for creating and designing new applications. I have a
                     background in

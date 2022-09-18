@@ -10,10 +10,13 @@ import SiteLogo from './resources/ART-Logo-large.png';
 import { AboutMe } from './AboutMe.Sections';
 import { DevInfo } from './Dev.Sections';
 import { Todo } from './Todo';
-import IconLogo from './resources/favicon.ico?v=2'
+import IconLogo from './resources/favicon.ico?v=2';
+import { SiteCards } from './Site-Cards.js';
+import { AppCards } from './App-Cards.js';
 
 function App() {
   const [content, setContent] = useState('Home');
+  const [cardState, setCardState] = useState(true);
 
   useEffect(() => {
     setContent('Home');
@@ -21,6 +24,23 @@ function App() {
 
   const handleClick = ({ target }) => {
     setContent(target.value);
+    handleCards(target.value);
+  }
+
+  const handleCards = (currentContent) => {
+    if (currentContent === 'Home') {
+      setCardState(true);
+    } else {
+      setCardState(false);
+    }
+  }
+
+  const handleContentChange = (appName) => {
+    setContent(appName);
+    if (appName !== 'Home') {
+      setCardState(false);
+    }
+
   }
 
   return (
@@ -51,6 +71,10 @@ function App() {
       {content == 'AboutMe' ? <AboutMe /> : null}
       {content == 'Todo' ? <Todo /> : null}
 
+      <section className="app-sites-container">
+        {cardState === true ? <AppCards onChange={handleContentChange} /> : null}
+        {cardState === true ? <SiteCards /> : null}
+      </section>
       <Footer />
     </div>
   );

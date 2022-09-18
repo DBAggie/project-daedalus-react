@@ -3,7 +3,7 @@ import Todo from './resources/current-apps/todo-1.png';
 import './styles/home-styles.css';
 
 
-export const AppCards = () => {
+export const AppCards = (props) => {
 
     const cardInfo = {
         cards: [
@@ -35,23 +35,35 @@ export const AppCards = () => {
         ]
     };
 
+    const handleClick = (event) => {
+        const name = event.target.value;
+        props.onChange(name);
+    }
+
     return (
-        <div className="current-apps">
-            {cardInfo.cards.map(card => (
-                <div className="card" key={card.title}>
-                    <div className="card-background"></div>
-                    <div className="card-title">
-                        <h3>{card.title}</h3>
+        <div>
+            <div className="card-heading">
+                <h2>Current Applications</h2>
+            </div>
+
+            <div className="current-apps">
+                {cardInfo.cards.map(card => (
+                    <div className="card" key={card.title}>
+                        <div className="card-background"></div>
+                        <div className="card-title">
+                            <h3>{card.title}</h3>
+                            <br />
+                        </div>
+                        <div className="card-img"><img src={card.image} alt='Default Alt' /></div>
                         <br />
+                        <div className="card-info">
+                            <h4>A Dynamic To Do List App</h4>
+                            <button value={card.imgTitle} className='card-a' onClick={handleClick}>Check it out!</button>
+                            {/* <a href='' value={card.imgTitle} className='card-a' onclick={handleClick}>Check it out!</a> */}
+                        </div>
                     </div>
-                    <div className="card-img"><img src={card.image} alt='Default Alt' /></div>
-                    <br />
-                    <div className="card-info">
-                        <h4>A Dynamic To Do List App</h4>
-                        <a href={`./${card.imgTitle}.html`} className='card-a'>Check it out!</a>
-                    </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
     );
 

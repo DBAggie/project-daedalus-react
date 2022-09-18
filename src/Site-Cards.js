@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/home-styles.css';
+import './styles/styles.css';
 import ReactCardLogo from './resources/current-sites/react-1.png';
 import RubyCardLogo from './resources/current-sites/ruby-1.png';
 import AngularCardLogo from './resources/current-sites/angular-1.png';
@@ -67,32 +68,36 @@ export const SiteCards = () => {
     };
 
     return (
-        <div className="current-sites">
-            {cardInfo.cards.map(card => (
-                <div className="card" key={card.title}>
-                    <div className="card-title">
-                        <h3>{card.title}</h3>
-                        <br />
-                    </div>
-                    <div className="card-img" id='laravel'><img src={card.image} alt='Default Alt' /></div>
-                    <div className="card-info">
-                        <h4>{card.altTitle}</h4>
-                        <br />
-                        <p>{card.description}</p>
-                        <br />
-                        <h5>Languages & Libraries Used</h5>
-                        <ul>
-                            {card.listItems.map(item => (
-                                <li key={item}>{item}</li>
-                            ))}
-                        </ul>
-                        <br />
-                    </div>
-                    <a href={`./${card.imgTitle}.html`} className='card-a'>Check it out!</a>
-                </div>
+        <div>
+            <div className="card-heading">
+                <h2>Current Sites</h2>
+            </div>
+            <div className="current-sites">
 
-            ))}
-
+                {cardInfo.cards.map(card => (
+                    <div className="card" key={card.title}>
+                        <div className="card-title">
+                            <h3>{card.title}</h3>
+                            <br />
+                        </div>
+                        <div className="card-img" id='laravel'><img src={card.image} alt='Default Alt' /></div>
+                        <div className="card-info">
+                            <h4>{card.altTitle}</h4>
+                            <br />
+                            <p>{card.description}</p>
+                            <br />
+                            <h5>Languages & Libraries Used</h5>
+                            <ul>
+                                {card.listItems.map(item => (
+                                    <li key={item}>{item}</li>
+                                ))}
+                            </ul>
+                            <br />
+                        </div>
+                        <a href={`./${card.imgTitle}.html`} className='card-a'>Check it out!</a>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 

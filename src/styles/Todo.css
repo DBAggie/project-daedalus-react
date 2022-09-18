@@ -12,6 +12,10 @@ button {
   overflow: hidden;
 }
 
+.todo-content h1 {
+  color: #fff;
+}
+
 .todo-form {
   margin-bottom: 20px;
 }
@@ -36,10 +40,11 @@ button {
 
 .todo-item {
   padding: 1rem;
-  margin-bottom: 1rem;
+  margin: 1.5rem;
   border-radius: 3px;
   background-color: #fff;
   width: 30%;
+  display: inline-block;
 }
 
 .todo-text {
