@@ -22,49 +22,20 @@ function App() {
     setContent('Home');
   }, []);
 
-  const handleClick = ({ target }) => {
-    setContent(target.value);
-    handleCards(target.value);
-  }
-
-  const handleCards = (currentContent) => {
-    if (currentContent === 'Home') {
-      setCardState(true);
-    } else {
-      setCardState(false);
-    }
-  }
-
-  const handleContentChange = (appName) => {
+  const handleCardContentChange = (appName) => {
     setContent(appName);
     if (appName !== 'Home') {
       setCardState(false);
     }
+  }
 
+  const handleContentChange = (contentName) => {
+    setContent(contentName);
   }
 
   return (
     <div className="wrapper root">
-      <header>
-        <div className="header-container">
-          <div className="header-icons">
-            <a className="icons icon-1" href="https://github.com/DBAggie" target="_blank"><img
-              src={GitHubLogo} alt='Default Alt' /></a>
-            <a className="icons icon-2" href="https://www.linkedin.com/in/justin-h-7911536b/" target="_blank"><img
-              src={LinkedInLogo} alt='Default Alt' /></a>
-          </div>
-          <div className="header-logo">
-            <img src={SiteLogo} />
-          </div>
-          <div className="header-nav">
-            <button className="nav-item" value='Home' onClick={handleClick}>Home</button>
-            <button className="nav-item" value='AboutMe' onClick={handleClick}>About Me</button>
-            <button className="nav-item" value='DevInfo' onClick={handleClick}>Dev Info</button>
-            <button className="nav-item" value='Todo' onClick={handleClick}>Todo App</button>
-          </div>
-        </div>
-      </header>
-
+      <header onChange={handleContentChange} />
 
       {content == 'Home' ? <Home /> : null}
       {content == 'DevInfo' ? <DevInfo /> : null}
@@ -72,7 +43,7 @@ function App() {
       {content == 'Todo' ? <Todo /> : null}
 
       <section className="app-sites-container">
-        {cardState === true ? <AppCards onChange={handleContentChange} /> : null}
+        {cardState === true ? <AppCards onChange={handleCardContentChange} /> : null}
         {cardState === true ? <SiteCards /> : null}
       </section>
       <Footer />

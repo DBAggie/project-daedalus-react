@@ -39,17 +39,18 @@ button {
 }
 
 .todo-item {
-  padding: 1rem;
+  padding: 0.5rem;
   margin: 1.5rem;
   border-radius: 3px;
   background-color: #fff;
   width: 30%;
   display: inline-block;
+  height: fit-content;
 }
 
 .todo-text {
   flex-grow: 1;
-  text-align: center;
+  /* text-align: center; */
 }
 .todo-item .remove-button {
   font-size: 80%;
@@ -58,5 +59,5 @@ button {
   border-radius: 3px;
   color: #000;
   width: 1.5rem;
-  text-align: center;
+  /* text-align: center; */
 }

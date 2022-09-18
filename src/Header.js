@@ -3,31 +3,33 @@ import GitHubLogo from './resources/GitHub-Mark/PNG/GitHub-Mark-Light-32px.png';
 import LinkedInLogo from './resources/LinkedIn-Logos/LI-In-Bug-32px.png';
 import SiteLogo from './resources/ART-Logo-large.png';
 
-export const Header = () => {
+export const Header = (props) => {
+
+
+    const handleClick = (event) => {
+        const name = event.target.value;
+        props.onChange(name);
+    }
+
     return (
-        <div>
-            <div className="header-background">
-                <p>-</p>
-            </div>
-            <header>
-                <div className="container header">
-                    <div className="footer-icons">
-                        <a className="icons icon-1" href="https://github.com/DBAggie" target="_blank"><img
-                            src={GitHubLogo} /></a>
-                        <br />
-                        <a className="icons icon-2" href="https://www.linkedin.com/in/justin-h-7911536b/" target="_blank"><img
-                            src={LinkedInLogo} /></a>
-                    </div>
-                    <img src={SiteLogo} />
-                    <nav className="mainnav header-content">
-                        <li>
-                            <ul><a className="nav-link active-page" href="#">Home</a></ul>
-                            <ul><a className="nav-link" href="about.html">About Me</a></ul>
-                            <ul><a className="nav-link" href="dev.html">Dev Info</a></ul>
-                        </li>
-                    </nav>
+        <header>
+            <div className="header-container">
+                <div className="header-icons">
+                    <a className="icons icon-1" href="https://github.com/DBAggie" target="_blank"><img
+                        src={GitHubLogo} alt='Default Alt' /></a>
+                    <a className="icons icon-2" href="https://www.linkedin.com/in/justin-h-7911536b/" target="_blank"><img
+                        src={LinkedInLogo} alt='Default Alt' /></a>
                 </div>
-            </header>
-        </div>
+                <div className="header-logo">
+                    <img src={SiteLogo} />
+                </div>
+                <div className="header-nav">
+                    <button className="nav-item" value='Home' onClick={handleClick}>Home</button>
+                    <button className="nav-item" value='AboutMe' onClick={handleClick}>About Me</button>
+                    <button className="nav-item" value='DevInfo' onClick={handleClick}>Dev Info</button>
+                    <button className="nav-item" value='Todo' onClick={handleClick}>Todo App</button>
+                </div>
+            </div>
+        </header>
     );
 }
