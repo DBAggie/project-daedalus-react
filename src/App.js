@@ -9,6 +9,7 @@ import LinkedInLogo from './resources/LinkedIn-Logos/LI-In-Bug-32px.png';
 import SiteLogo from './resources/ART-Logo-large.png';
 import { AboutMe } from './AboutMe.Sections';
 import { DevInfo } from './Dev.Sections';
+import { Todo } from './Todo';
 import IconLogo from './resources/favicon.ico?v=2'
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
             <button className="nav-item" value='Home' onClick={handleClick}>Home</button>
             <button className="nav-item" value='AboutMe' onClick={handleClick}>About Me</button>
             <button className="nav-item" value='DevInfo' onClick={handleClick}>Dev Info</button>
+            <button className="nav-item" value='Todo' onClick={handleClick}>Todo App</button>
           </div>
         </div>
       </header>
@@ -47,6 +49,7 @@ function App() {
       {content == 'Home' ? <Home /> : null}
       {content == 'DevInfo' ? <DevInfo /> : null}
       {content == 'AboutMe' ? <AboutMe /> : null}
+      {content == 'Todo' ? <Todo /> : null}
 
       <Footer />
     </div>
