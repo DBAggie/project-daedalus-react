@@ -57,6 +57,7 @@ button {
   padding: 20px;
   background: transparent;
   border-radius: 8px;
+  color:rgb(256, 256, 256);
 }
 
 button:hover {

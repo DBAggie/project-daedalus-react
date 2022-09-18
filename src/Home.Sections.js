@@ -1,17 +1,14 @@
 import React from 'react';
 import BackgroundEarth from './resources/earth_1.jpg';
 import Meme from './resources/meme-1.png';
-import Todo from './resources/current-apps/todo-1.png';
-import ReactCardLogo from './resources/current-sites/ruby-1.png';
-import RubyCardLogo from './resources/current-sites/ruby-1.png';
-import AngularCardLogo from './resources/current-sites/angular-1.png';
-import LaravelCardLogo from './resources/current-sites/laravel-1.png';
+import { SiteCards } from './Site-Cards.js';
+import { AppCards } from './App-Cards.js';
 import './styles/home-styles.css';
 
 export const Home = () => {
     return (
         <div className='content'>
-            <body className="mainSection">
+            <div className="mainSection">
                 <div className="container-overlay">
                     <div className="overlay">
                         <img src={BackgroundEarth} />
@@ -69,152 +66,16 @@ export const Home = () => {
                         </p>
                     </div>
                 </div>
-            </body>
+            </div>
             <section className="app-sites-container">
                 <div className="card-heading">
                     <h2>Current Applications</h2>
                 </div>
-                <div className="current-apps">
-                    <div className="card-app-1 card">
-                        <div className="card-background"></div>
-                        <div className="card-title">
-                            <h3>To Do List</h3>
-                        </div>
-                        <div className="card-img"><img src={Todo} /></div>
-                        <div className="card-info">
-                            <h4>A Dynamic To Do List App</h4>
-
-                            <a href="./todo.html">Check it out!</a>
-                        </div>
-                    </div>
-                    <div className="card-app-2 card">
-                        <div className="card-title">
-                            <h3>To Do List</h3>
-                        </div>
-                        <div className="card-img"><img src={Todo} /></div>
-                        <div className="card-info">
-                            <h4>A Dynamic To Do List App</h4>
-                            <a href="./todo.html">Check it out!</a>
-                        </div>
-                    </div>
-                    <div className="card-app-3 card">
-                        <div className="card-title">
-                            <h3>To Do List</h3>
-                        </div>
-                        <div className="card-img"><img src={Todo} /></div>
-                        <div className="card-info">
-                            <h4>A Dynamic To Do List App</h4>
-                            <a href="./todo.html">Check it out!</a>
-                        </div>
-                    </div>
-                    <div className="card-app-4 card">
-                        <div className="card-title">
-                            <h3>To Do List</h3>
-                        </div>
-                        <div className="card-img"><img src={Todo} /></div>
-                        <div className="card-info">
-                            <h4>A Dynamic To Do List App</h4>
-                            <a href="./todo.html">Check it out!</a>
-                        </div>
-                    </div>
-                </div>
+                <AppCards />
                 <div className="card-heading">
                     <h2>Current Sites</h2>
                 </div>
-                <div className="current-sites">
-
-                    <div className="card-site-1 card">
-                        <div className="card-title">
-                            <h3>NextJS</h3>
-                            <br />
-                        </div>
-                        <div className="card-img" id='react'><img src={ReactCardLogo} /></div>
-                        <div className="card-info">
-                            <h4>React Based Website</h4>
-                            <br />
-                            <p>This website was built on a React framework.</p>
-                            <br />
-                            <h5>Languages & Libraries Used</h5>
-                            <br />
-                            <li>
-                                <ul>Javascript</ul>
-                                <ul>React</ul>
-                                <ul>HTML5</ul>
-                                <ul>CSS</ul>
-                            </li>
-                            <br />
-                            <a href="./todo.html">Check it out!</a>
-                        </div>
-                    </div>
-                    <div className="card-site-2 card">
-                        <div className="card-title">
-                            <h3>Angular</h3>
-                            <br />
-                        </div>
-                        <div className="card-img" id='angular'><img src={AngularCardLogo} /></div>
-                        <div className="card-info">
-                            <h4>Angular Based Website</h4>
-                            <br />
-                            <p>This website was built on an Angular framework.</p>
-                            <br />
-                            <h5>Languages & Libraries Used</h5>
-                            <br />
-                            <li>
-                                <ul>Typescript</ul>
-                                <ul>Angular</ul>
-                                <ul>HTML5</ul>
-                                <ul>CSS</ul>
-                            </li>
-                            <br />
-                            <a href="./todo.html">Check it out!</a>
-                        </div>
-                    </div>
-                    <div className="card-site-3 card">
-                        <div className="card-title">
-                            <h3>Ruby on Rails</h3>
-                            <br />
-                        </div>
-                        <div className="card-img" id='ruby'><img src={RubyCardLogo} /></div>
-                        <div className="card-info">
-                            <h4>A Ruby Based Website</h4>
-                            <br />
-                            <p>This website was built on a Ruby framework.</p>
-                            <br />
-                            <h5>Languages & Libraries Used</h5>
-                            <br />
-                            <li>
-                                <ul>Javascript</ul>
-                                <ul>Ruby</ul>
-                                <ul>HTML5</ul>
-                                <ul>CSS</ul>
-                            </li>
-                            <br />
-                            <a href="./todo.html">Check it out!</a>
-                        </div>
-                    </div>
-                    <div className="card-site-4 card">
-                        <div className="card-title">
-                            <h3>Laravel</h3>
-                            <br />
-                        </div>
-                        <div className="card-img" id='laravel'><img src={LaravelCardLogo} /></div>
-                        <div className="card-info">
-                            <h4>A Laravel Based Website</h4>
-                            <br />
-                            <p>This website was built on a Laravel framework.</p>
-                            <br />
-                            <h5>Languages & Libraries Used</h5>
-                            <br />
-                            <li>
-                                <ul>PHP</ul>
-                                <ul>HTML5</ul>
-                                <ul>CSS</ul>
-                            </li>
-                            <br />
-                            <a href="./todo.html">Check it out!</a>
-                        </div>
-                    </div>
-                </div>
+                <SiteCards />
             </section>
         </div>
     );
