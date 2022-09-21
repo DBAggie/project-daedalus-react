@@ -30,7 +30,7 @@ export const AppCards = (props) => {
                 title: 'Random Pokemon App',
                 image: Todo,
                 description: 'An app that give you a random Pokemon',
-                imgTitle: 'Todo'
+                imgTitle: 'Pokemon'
             }
         ]
     };

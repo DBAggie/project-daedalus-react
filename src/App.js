@@ -13,6 +13,7 @@ import { Todo } from './Todo';
 import IconLogo from './resources/favicon.ico?v=2';
 import { SiteCards } from './Site-Cards.js';
 import { AppCards } from './App-Cards.js';
+import { Pokemon } from './Pokemon.js';
 
 function App() {
   const [content, setContent] = useState('Home');
@@ -39,6 +40,7 @@ function App() {
       {content == 'DevInfo' ? <DevInfo /> : null}
       {content == 'AboutMe' ? <AboutMe /> : null}
       {content == 'Todo' ? <Todo /> : null}
+      {content == 'Pokemon' ? <Pokemon /> : null}
 
       <section className="app-sites-container">
         {cardState === true ? <AppCards onChange={handleCardContentChange} /> : null}

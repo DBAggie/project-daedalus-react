@@ -3,7 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@700&display=swap");
 
 *,
-html, .root {
+html,
+.root {
   margin: 0px;
   padding: 0px;
 }
@@ -24,4 +25,8 @@ html, .root {
   background-color: rgb(30, 41, 82);
   overflow: hidden;
   position: relative;
+}
+
+h1 {
+  color: #fff;
 }
