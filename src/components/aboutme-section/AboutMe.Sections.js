@@ -1,6 +1,6 @@
 import React from 'react';
-import ProfilePhoto from './resources/profile-photo.jpeg';
-import './styles/About-Me-styles.css';
+import ProfilePhoto from '../../resources/profile-photo.jpeg';
+import '../../styles/About-Me-styles.css';
 
 export const AboutMe = () => {
     return (

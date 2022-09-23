@@ -6,7 +6,7 @@ export function PokemonData(props) {
     return (
         <div className='pokemon'>
             <h2>{data.name}</h2>
-            <img src={data.sprites.front_default} className='pokemon-img' />
+            <img src={data.sprites.other[`official-artwork`].front_default} className='pokemon-img' />
             <div className='pokemon-data'>
                 <ul>
                     <li>Weight: {data.weight}</li>

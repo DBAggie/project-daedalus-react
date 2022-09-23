@@ -1,9 +1,9 @@
 import React from 'react';
-import BackgroundEarth from './resources/earth_1.jpg';
-import Meme from './resources/meme-1.png';
-import { SiteCards } from './Site-Cards.js';
-import { AppCards } from './App-Cards.js';
-import './styles/home-styles.css';
+import BackgroundEarth from '../../resources/earth_1.jpg';
+import Meme from '../../resources/meme-1.png';
+// import { SiteCards } from '../site-cards/Site-Cards.js';
+// import { AppCards } from '../app-cards/App-Cards.js';
+import '../../styles/home-styles.css';
 
 export const Home = () => {
     return (

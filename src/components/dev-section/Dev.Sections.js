@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/Dev-styles.css';
+import '../../styles/Dev-styles.css';
 
 export const DevInfo = () => {
     return (

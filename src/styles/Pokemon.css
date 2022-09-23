@@ -8,6 +8,22 @@
   overflow: hidden;
 }
 
+.pokemon-container button {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+.pokemon-container button:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+.pokemon-container button:active {
+  color: #000;
+  background-color: #fff;
+}
+
 .pokemon {
   display: flex;
   flex-direction: column;

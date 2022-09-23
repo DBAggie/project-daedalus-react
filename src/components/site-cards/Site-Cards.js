@@ -1,10 +1,10 @@
 import React from 'react';
-import './styles/home-styles.css';
-import './styles/styles.css';
-import ReactCardLogo from './resources/current-sites/react-1.png';
-import RubyCardLogo from './resources/current-sites/ruby-1.png';
-import AngularCardLogo from './resources/current-sites/angular-1.png';
-import LaravelCardLogo from './resources/current-sites/laravel-1.png';
+import '../../styles/home-styles.css';
+import '../../styles/styles.css';
+import ReactCardLogo from '../../resources/current-sites/react-1.png';
+import RubyCardLogo from '../../resources/current-sites/ruby-1.png';
+import AngularCardLogo from '../../resources/current-sites/angular-1.png';
+import LaravelCardLogo from '../../resources/current-sites/laravel-1.png';
 
 
 export const SiteCards = () => {

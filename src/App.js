@@ -1,19 +1,17 @@
 import './styles/Header-styles.css';
 import './styles/styles.css';
 import React, { useState, useEffect } from 'react';
-import { Header } from './Header.js';
-import { Footer } from './Footer.js';
-import { Home } from './Home.Sections.js';
-import GitHubLogo from './resources/GitHub-Mark/PNG/GitHub-Mark-Light-32px.png';
-import LinkedInLogo from './resources/LinkedIn-Logos/LI-In-Bug-32px.png';
-import SiteLogo from './resources/ART-Logo-large.png';
-import { AboutMe } from './AboutMe.Sections';
-import { DevInfo } from './Dev.Sections';
-import { Todo } from './Todo';
+import { Header } from './components/header-footer/Header.js';
+import { Footer } from './components/header-footer/Footer.js';
+import { Home } from './components/home-section/Home.Sections.js';
+import { AboutMe } from './components/aboutme-section/AboutMe.Sections';
+import { DevInfo } from './components/dev-section/Dev.Sections';
+import { Todo } from './components/todo-app/Todo';
 import IconLogo from './resources/favicon.ico?v=2';
-import { SiteCards } from './Site-Cards.js';
-import { AppCards } from './App-Cards.js';
-import { Pokemon } from './Pokemon.js';
+import { SiteCards } from './components/site-cards/Site-Cards.js';
+import { AppCards } from './components/app-cards/App-Cards.js';
+import { Pokemon } from './components/pokemon-app/Pokemon.js';
+import { Blackjack } from './components/blackjack/blackjack.js';
 
 function App() {
   const [content, setContent] = useState('Home');
@@ -41,6 +39,8 @@ function App() {
       {content == 'AboutMe' ? <AboutMe /> : null}
       {content == 'Todo' ? <Todo /> : null}
       {content == 'Pokemon' ? <Pokemon /> : null}
+      {content == 'Blackjack' ? <Blackjack /> : null}
+
 
       <section className="app-sites-container">
         {cardState === true ? <AppCards onChange={handleCardContentChange} /> : null}

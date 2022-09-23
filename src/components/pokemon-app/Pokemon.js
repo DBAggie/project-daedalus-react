@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { randomNumber } from './utility/Fetch.js';
-import './styles/Pokemon.css';
-import { PokemonData } from './components/Pokemon-Data.js';
+import { randomNumber } from '../utility/utils.js';
+import '../../styles/Pokemon.css';
+import { PokemonData } from './Pokemon-Data.js';
 
 export function Pokemon() {
     const [data, setData] = useState(null);

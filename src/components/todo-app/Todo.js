@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { generateId } from './utils';
+import { generateId } from '../utility/utils';
 import { TodoItem } from './Todo-Item';
 import { TodoForm } from './Todo-Form';
-import './styles/Todo.css';
+import '../../styles/Todo.css';
 
 export function Todo() {
     const [todos, setTodos] = useState([
