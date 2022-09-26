@@ -15,10 +15,10 @@ export const AppCards = (props) => {
 
             },
             {
-                title: 'A Weather App',
+                title: 'A Trivia App',
                 image: Todo,
-                description: 'An application to give you information about the weather',
-                imgTitle: 'Todo'
+                description: 'An application to gives you trivia questions',
+                imgTitle: 'Trivia'
             },
             {
                 title: 'A Blackjack Game',
@@ -59,7 +59,6 @@ export const AppCards = (props) => {
                         <div className="card-info">
                             <h4>{card.description}</h4>
                             <button value={card.imgTitle} className='card-a' onClick={handleClick}>Check it out!</button>
-                            {/* <a href='' value={card.imgTitle} className='card-a' onclick={handleClick}>Check it out!</a> */}
                         </div>
                     </div>
                 ))}

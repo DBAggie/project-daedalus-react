@@ -25,34 +25,7 @@ export function randomCard() {
     const newDeck = new CreateDeck();
     //shuffle the deck
     const shuffledDeck = new ShuffleDeck(newDeck);
-    // console.log(shuffledDeck);
     return shuffledDeck[Math.floor(Math.random() * shuffledDeck.length)];
-}
-
-export function CheckBust(hand) {
-    let total = 0;
-
-    for (let i = 0; i < hand.length; i++) {
-        if (hand[i].value === 'A') {
-            if (hand[i].value + 11 > 21) {
-                hand[i].value = 1;
-            } else {
-                hand[i].value = 11;
-            }
-        }
-        if (hand[i].value === 'J' || hand[i].value === 'Q' || hand[i].value === 'K') {
-            hand[i].value = 10;
-        } else {
-            hand[i].value = parseInt(hand[i].value);
-
-        }
-        total += hand[i].value;
-    }
-    if (total > 21) {
-
-        return true;
-    }
-    return false;
 }
 
 export function CheckTotal(hand) {
@@ -75,7 +48,6 @@ export function CheckTotal(hand) {
         }
         total += hand[i].value;
     }
-    // console.log(hand);
     return total;
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 export function DealerHand(props) {
-    const { dealerHand } = props;
+    const { dealerHand, playerTotal } = props;
 
     return (
         <div>
@@ -13,6 +13,7 @@ export function DealerHand(props) {
                     </div>
                 );
             })}
+            <p>{`Dealer Total is: ${playerTotal}`}</p>
         </div>
     );
 }

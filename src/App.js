@@ -12,6 +12,7 @@ import { SiteCards } from './components/site-cards/Site-Cards.js';
 import { AppCards } from './components/app-cards/App-Cards.js';
 import { Pokemon } from './components/pokemon-app/Pokemon.js';
 import { Blackjack } from './components/blackjack/blackjack.js';
+import { Trivia } from './components/trivia/Trivia.js';
 
 function App() {
   const [content, setContent] = useState('Home');
@@ -40,6 +41,7 @@ function App() {
       {content == 'Todo' ? <Todo /> : null}
       {content == 'Pokemon' ? <Pokemon /> : null}
       {content == 'Blackjack' ? <Blackjack /> : null}
+      {content === 'Trivia' ? <Trivia /> : null}
 
 
       <section className="app-sites-container">

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 // import './blackjack.css';
-import { CreateDeck, ShuffleDeck, CheckBust, CheckTotal, ranIndex, randomCard } from '../utility/blackjack-utils.js';
+import { CheckTotal, randomCard, checkCards } from '../utility/blackjack-utils.js';
 import { BlackjackGame } from './blackjack-game.js';
 import { BlackjackStartGame } from './blackjack-start-game.js';
 import { PlayAgain } from './Blackjack-play-again.js';
+import { wait } from '@testing-library/user-event/dist/utils/index.js';
 
 export const Blackjack = () => {
     const [gameState, setGameState] = useState(false);
@@ -13,8 +14,8 @@ export const Blackjack = () => {
     const [dealerHand, setDealerHand] = useState([]);
     const [whoWon, setWhoWon] = useState('');
     const [playAgain, setPlayAgain] = useState(false);
-    const [playerTotal, setPlayerTotal] = useState(0);
-    const [dealerTotal, setDealerTotal] = useState(0);
+    const [playerTotal, setPlayerTotal] = useState(null);
+    const [dealerTotal, setDealerTotal] = useState(null);
 
     function startGame() {
         setPlayAgain(false);
@@ -24,21 +25,11 @@ export const Blackjack = () => {
         setWhoWon('');
         setPlayerHand([]);
         setDealerHand([]);
-        const playerHand = [];
-        playerHand.push(randomCard());
-        playerHand.push(randomCard());
-        setPlayerHand(playerHand);
-        //deal two cards to the dealer
-        const dealerHand = [];
-        dealerHand.push(randomCard());
-        dealerHand.push(randomCard());
-        setDealerHand(dealerHand);
-
-        if (CheckTotal(dealerHand) === 21) {
-            setWhoWon('dealer');
-            setGameState(false);
-            setPlayAgain(true);
+        for (let i = 0; i < 2; i++) {
+            setPlayerHand((prev) => [...prev, randomCard()]);
+            setDealerHand((prev) => [...prev, randomCard()]);
         }
+
     }
 
     function gameLoop() {
@@ -111,16 +102,17 @@ export const Blackjack = () => {
 
     }
 
-    function hit() {
-        var card = randomCard();
-        console.log(card);
-        setPlayerHand((prev) => [...prev, card]);
-        console.log(CheckTotal(playerHand));
-        console.info(playerHand);
+    useEffect(() => {
+        setPlayerTotal(CheckTotal(playerHand));
+        setDealerTotal(CheckTotal(dealerHand));
         if (CheckTotal(playerHand) > 21) {
             gameLoop();
         }
+    }, [playerHand]);
 
+    function hit() {
+        var card = randomCard();
+        setPlayerHand((prev) => [...prev, card]);
     }
 
     function stand() {
@@ -131,8 +123,8 @@ export const Blackjack = () => {
     return (
         <div className="blackjack-container">
 
-            {gameState && playAgain ? null : <BlackjackStartGame startGame={startGame} />}
-            {gameState ? <BlackjackGame playerHand={playerHand} dealerHand={dealerHand} /> : null}
+            {gameState && playAgain ? null : <BlackjackStartGame startGame={startGame} playerTotal={playerTotal} />}
+            {gameState ? <BlackjackGame playerHand={playerHand} dealerHand={dealerHand} dealerTotal={dealerTotal} /> : null}
             {playAgain ? <PlayAgain startGame={startGame} whoWon={whoWon} playerTotal={playerTotal} dealerTotal={dealerTotal} /> : null}
 
             <button onClick={hit}>Hit</button>
