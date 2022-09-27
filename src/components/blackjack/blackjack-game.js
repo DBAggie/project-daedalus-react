@@ -3,9 +3,9 @@ import { DealerHand } from './DealerHand.js';
 import { PlayerHand } from './PlayerHand.js';
 
 export function BlackjackGame(props) {
-    const { playerHand, dealerHand } = props;
+    const { playerHand, dealerHand, playerTotal } = props;
     return (
-        <div>
+        <div className='game-content'>
             <div className="blackjack-dealer">
                 <h2>Dealer</h2>
                 <div className="blackjack-dealer-hand">
@@ -15,7 +15,7 @@ export function BlackjackGame(props) {
             <div className="blackjack-player">
                 <h2>Player</h2>
                 <div className="blackjack-player-hand">
-                    <PlayerHand playerHand={playerHand} />
+                    <PlayerHand playerHand={playerHand} playerTotal={playerTotal} />
                 </div>
             </div>
 

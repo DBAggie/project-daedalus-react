@@ -1,19 +1,14 @@
 import React from 'react';
 
 export function DealerHand(props) {
-    const { dealerHand, playerTotal } = props;
+    const { dealerHand } = props;
 
     return (
         <div>
-            <p>The dealer is holding: </p>
-            {dealerHand.map((card, index) => {
-                return (
-                    <div key={index}>
-                        <p>{`${card.value}-${card.suit}`}</p>
-                    </div>
-                );
-            })}
-            <p>{`Dealer Total is: ${playerTotal}`}</p>
+            <p>The dealer is showing a: </p>
+            <div>
+                <p>{dealerHand[0].value}-{dealerHand[0].suit}</p>
+            </div>
         </div>
     );
 }

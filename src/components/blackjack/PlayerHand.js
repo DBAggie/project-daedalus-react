@@ -1,6 +1,7 @@
 import React from 'react';
 
 export function PlayerHand(props) {
+    const { playerTotal } = props;
 
     // console.log(playerHand);
 
@@ -14,6 +15,7 @@ export function PlayerHand(props) {
                     </div>
                 );
             })}
+            <p>{`Player Total is: ${playerTotal}`}</p>
         </div>
     );
 }

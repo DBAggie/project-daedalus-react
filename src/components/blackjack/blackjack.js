@@ -4,7 +4,10 @@ import { CheckTotal, randomCard, checkCards } from '../utility/blackjack-utils.j
 import { BlackjackGame } from './blackjack-game.js';
 import { BlackjackStartGame } from './blackjack-start-game.js';
 import { PlayAgain } from './Blackjack-play-again.js';
+import { PlayAgainControls } from './Blackjack-play-again-controls.js';
 import { wait } from '@testing-library/user-event/dist/utils/index.js';
+import '../../styles/blackjack.css';
+import { GameControls } from './blackjack-game-controls.js';
 
 export const Blackjack = () => {
     const [gameState, setGameState] = useState(false);
@@ -16,8 +19,10 @@ export const Blackjack = () => {
     const [playAgain, setPlayAgain] = useState(false);
     const [playerTotal, setPlayerTotal] = useState(null);
     const [dealerTotal, setDealerTotal] = useState(null);
+    const [wasActive, setWasActive] = useState(false);
 
     function startGame() {
+        setWasActive(true);
         setPlayAgain(false);
         setGameState(true);
         setPlayerTotal(0);
@@ -108,7 +113,24 @@ export const Blackjack = () => {
         if (CheckTotal(playerHand) > 21) {
             gameLoop();
         }
+        if (CheckTotal(playerHand === 21)) {
+            gameLoop();
+        }
     }, [playerHand]);
+
+    useEffect(() => {
+        setPlayerTotal(CheckTotal(playerHand));
+        setDealerTotal(CheckTotal(dealerHand));
+        if (CheckTotal(playerHand) > 21) {
+            gameLoop();
+        }
+        if (CheckTotal(playerHand === 21)) {
+            gameLoop();
+        }
+        if (CheckTotal(dealerHand) === 21) {
+            gameLoop();
+        }
+    }, [dealerHand]);
 
     function hit() {
         var card = randomCard();
@@ -122,15 +144,16 @@ export const Blackjack = () => {
 
     return (
         <div className="blackjack-container">
-
-            {gameState && playAgain ? null : <BlackjackStartGame startGame={startGame} playerTotal={playerTotal} />}
-            {gameState ? <BlackjackGame playerHand={playerHand} dealerHand={dealerHand} dealerTotal={dealerTotal} /> : null}
-            {playAgain ? <PlayAgain startGame={startGame} whoWon={whoWon} playerTotal={playerTotal} dealerTotal={dealerTotal} /> : null}
-
-            <button onClick={hit}>Hit</button>
-            <button onClick={stand}>Stand</button>
-
-        </div>
+            <div className="blackjack-game">
+                {wasActive ? null : <BlackjackStartGame startGame={startGame} playerTotal={playerTotal} />}
+                {gameState ? <BlackjackGame playerHand={playerHand} dealerHand={dealerHand} playerTotal={playerTotal} /> : null}
+                {playAgain ? <PlayAgain startGame={startGame} whoWon={whoWon} playerTotal={playerTotal} dealerTotal={dealerTotal} /> : null}
+                <div className="game-controls">
+                    {gameState ? <GameControls hit={hit} stand={stand} /> : null}
+                    {playAgain ? <PlayAgainControls startGame={startGame} /> : null}
+                </div>
+            </div>
+        </div >
     )
 
 
