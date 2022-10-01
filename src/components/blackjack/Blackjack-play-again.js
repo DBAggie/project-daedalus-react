@@ -10,7 +10,7 @@ export function PlayAgain(props) {
                 <div>
                     <p>The winner was {whoWon}</p>
                     <p>The dealer had {dealerTotal}</p>
-                    <p>The play had {playerTotal}</p>
+                    <p>The player had {playerTotal}</p>
                 </div>
             </div>
 

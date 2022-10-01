@@ -31,9 +31,13 @@ function App() {
     }
   }
 
+  const toggleApps = () => {
+    setCardState(!cardState);
+  }
+
   return (
     <div className="wrapper root">
-      <Header onChange={handleCardContentChange} />
+      <Header onChange={handleCardContentChange} toggleApps={toggleApps} />
 
       {content == 'Home' ? <Home /> : null}
       {content == 'DevInfo' ? <DevInfo /> : null}
